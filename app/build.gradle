@@ -45,10 +45,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
-    //moshi
+    // moshi
     implementation("com.squareup.moshi:moshi:1.12.0")
 
+    // Converter which uses Moshi for serialization to and from JSON
+    implementation 'com.squareup.retrofit2:converter-moshi:latest.version'
+
+    implementation("androidx.fragment:fragment-ktx:1.3.6")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
 }
