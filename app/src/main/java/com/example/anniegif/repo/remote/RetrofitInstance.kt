@@ -12,4 +12,5 @@ object RetrofitInstance {
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
 
+    val annieService: AnnieService = retrofit.create(AnnieService::class.java)
 }
