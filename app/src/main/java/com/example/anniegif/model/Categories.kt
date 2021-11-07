@@ -3,7 +3,7 @@ package com.example.anniegif.model
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-data class Category (
+data class Categories (
     val baka: Baka,
     val bite: Bite,
     val blush: Blush,
