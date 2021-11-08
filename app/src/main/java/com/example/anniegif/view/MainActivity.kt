@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.gifs.observe(this) {
             // receive gifs result here
-            Log.d("GIVE ME DA GIFS", it.toString())
+            Log.d("GIVE ME DA GIFS", it.url.toString())
         }
 
     }
