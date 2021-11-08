@@ -7,10 +7,22 @@
     tools:context=".view.MainActivity">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/main_text"
+        android:id="@+id/categories_header"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="hello world!"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Annie GIF Categories"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/categories_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_editor_absoluteX="0dp"
+        tools:listitem=""/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
