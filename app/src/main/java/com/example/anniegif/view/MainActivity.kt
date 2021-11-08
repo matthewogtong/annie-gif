@@ -17,16 +17,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        initViews()
+        initCategoriesView()
+        initGIFSView()
 
         viewModel.categories.observe(this) {
-            // receive result here
+            // receive categories result here
             Log.d("give me categories", it.toString())
+        }
+
+        viewModel.gifs.observe(this) {
+            // receive gifs result here
+            Log.d("GIVE ME DA GIFS", it.toString())
         }
 
     }
 
-    private fun initViews() = with(binding) {
+    private fun initCategoriesView() = with(binding) {
         viewModel.getCategories()
+    }
+
+    private fun initGIFSView() = with(binding) {
+        viewModel.getGIFS()
     }
 }
