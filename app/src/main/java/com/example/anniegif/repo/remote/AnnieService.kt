@@ -10,6 +10,6 @@ interface AnnieService {
     @GET("endpoints")
     suspend fun getCategories(): Response<Categories>
 
-    @GET("endpoints")
+    @GET("baka")
     suspend fun getGIFS(): Response<GIFS>
 }
