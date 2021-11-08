@@ -32,6 +32,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun initBakaGif() = with(binding) {
+        btnBaka.setOnClickListener {
+            viewModel.getGIFS()
+        }
+
+    }
+
     private fun initCategoriesView() = with(binding) {
         viewModel.getCategories()
     }
