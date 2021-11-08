@@ -14,7 +14,7 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHol
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.loadInfo(categories[position])
+//        holder.loadInfo(categories[position])
     }
 
     override fun getItemCount(): Int {
@@ -25,9 +25,9 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHol
         private val binding: CategoryNameBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun loadInfo(category: Category) = with(binding) {
-
-        }
+//        fun loadInfo(category: Category) = with(binding) {
+//
+//        }
 
         companion object {
             fun getInstance(parent:ViewGroup): CategoryViewHolder {
