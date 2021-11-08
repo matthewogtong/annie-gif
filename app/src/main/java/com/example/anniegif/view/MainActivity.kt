@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import com.example.anniegif.R
 import com.example.anniegif.databinding.ActivityMainBinding
 import com.example.anniegif.viewmodel.AnnieViewModel
 
@@ -17,33 +16,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        initCategoriesView()
-        initGIFSView()
+        initViews()
 
         viewModel.categories.observe(this) {
             // receive categories result here
-            Log.d("give me categories", it.toString())
+            Log.d("categories", it.toString())
         }
 
         viewModel.gifs.observe(this) {
             // receive gifs result here
-            Log.d("GIVE ME DA GIFS", it.url.toString())
+            Log.d("gif url", it.url.toString())
         }
 
     }
 
-    private fun initBakaGif() = with(binding) {
-        btnBaka.setOnClickListener {
-            viewModel.getGIFS()
-        }
-
-    }
-
-    private fun initCategoriesView() = with(binding) {
+    private fun initViews() = with(binding) {
         viewModel.getCategories()
-    }
 
-    private fun initGIFSView() = with(binding) {
-        viewModel.getGIFS()
+        btnBaka.setOnClickListener {
+            viewModel.getGifs()
+        }
+
     }
 }

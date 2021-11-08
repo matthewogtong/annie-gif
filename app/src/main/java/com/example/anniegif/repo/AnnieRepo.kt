@@ -1,7 +1,7 @@
 package com.example.anniegif.repo
 
 import com.example.anniegif.model.Categories
-import com.example.anniegif.model.GIFS
+import com.example.anniegif.model.Gifs
 import com.example.anniegif.repo.remote.RetrofitInstance
 import retrofit2.Response
 import java.util.*
@@ -11,8 +11,8 @@ object AnnieRepo {
         return RetrofitInstance.annieService.getCategories()
     }
 
-    suspend fun getGIFS(): Response <GIFS> {
-        return RetrofitInstance.annieService.getGIFS()
+    suspend fun getGifs(): Response <Gifs> {
+        return RetrofitInstance.annieService.getGifs("baka", 14)
     }
 
 }
