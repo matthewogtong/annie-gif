@@ -17,12 +17,15 @@ class AnnieViewModel : ViewModel() {
     fun getCategories() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = AnnieRepo.getCategories()
-            val list = if (response.isSuccessful && !response.body().isNullorEmpty()) {
-                response.body() as Categories
+            val categoriesObject = if (response.isSuccessful) {
+                response.body()
             } else {
-                listOf("ERROR")
-                _categories.postValue(list as Categories?)
+                null
             }
+            categoriesObject?.let {
+                _categories.postValue(it)
+            }
+
         }
     }
 
