@@ -35,12 +35,12 @@ class AnnieViewModel : ViewModel() {
     fun getGIFS() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = AnnieRepo.getGIFS()
-            val GIFSObject = if (response.isSuccessful) {
+            val gifsObject = if (response.isSuccessful) {
                 response.body()
             } else {
                 null
             }
-            GIFSObject?.let {
+            gifsObject?.let {
                 _gifs.postValue(it)
             }
         }
