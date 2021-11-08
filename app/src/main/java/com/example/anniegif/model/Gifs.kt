@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 data class Gifs (
-    val url: Url
+    val url: List<Url>
 )
 
 @JsonClass(generateAdapter = true)
