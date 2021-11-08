@@ -17,4 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    private fun initViews() = with(binding) {
+        viewModel.getCategories()
+    }
 }
