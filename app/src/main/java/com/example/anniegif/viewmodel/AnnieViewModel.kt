@@ -25,8 +25,11 @@ class AnnieViewModel : ViewModel() {
             categoriesObject?.let {
                 _categories.postValue(it)
             }
-
         }
+    }
+
+    fun getGIFS() {
+
     }
 
 
