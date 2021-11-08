@@ -9,5 +9,7 @@ import java.util.*
 interface AnnieService {
     @GET("endpoints")
     suspend fun getCategories(): Response<Categories>
+
+    @GET("endpoints")
     suspend fun getGIFS(): Response<GIFS>
 }
