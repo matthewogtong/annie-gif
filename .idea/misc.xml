@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/activity_gif.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/activity_giflist.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11927083333333334" />
+        <entry key="app/src/main/res/layout/category_gif.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/layout/category_name.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/gif_card.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/gif_image.xml" value="0.16510416666666666" />
       </map>
     </option>
   </component>

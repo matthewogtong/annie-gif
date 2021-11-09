@@ -30,7 +30,7 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHol
 //        }
 
         companion object {
-            fun getInstance(parent:ViewGroup): CategoryViewHolder {
+            fun getInstance(parent: ViewGroup): CategoryViewHolder {
                 val binding = CategoryNameBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
