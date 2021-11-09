@@ -1,5 +1,6 @@
 package com.example.anniegif.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,8 +16,8 @@ class AnnieViewModel : ViewModel() {
     private val _categories = MutableLiveData<Categories>()
     val categories: LiveData<Categories> get() = _categories
 
-    private val _gifs = MutableLiveData<Gifs>()
-    val gifs: LiveData<Gifs> get() = _gifs
+    private val _gifs = MutableLiveData<List<Gifs.Url>>()
+    val gifs: LiveData<List<Gifs.Url>> get() = _gifs
 
     fun getCategories() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -34,14 +35,15 @@ class AnnieViewModel : ViewModel() {
 
     fun getGifs() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = AnnieRepo.getGifs()
+            val response = AnnieRepo.getGifs("baka", 14)
             val gifsObject = if (response.isSuccessful) {
                 response.body()
             } else {
+                Log.d("gif url", "you suck")
                 null
             }
             gifsObject?.let {
-                _gifs.postValue(it)
+                _gifs.postValue(it.url)
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.example.anniegif.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,18 +24,16 @@ class MainActivity : AppCompatActivity() {
             Log.d("categories", it.toString())
         }
 
-        viewModel.gifs.observe(this) {
-            // receive gifs result here
-            Log.d("gif url", it.url.toString())
-        }
-
     }
 
     private fun initViews() = with(binding) {
         viewModel.getCategories()
-
+        val intent = Intent(binding.root.context, GifListActivity::class.java)
         btnBaka.setOnClickListener {
             viewModel.getGifs()
+            startActivity(intent)
+            //syntax for inside categories adapter
+//            startActivity(binding.root.context, intent, null)
         }
 
     }

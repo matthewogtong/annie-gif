@@ -6,13 +6,16 @@ import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
-data class Gifs (
+data class Gifs(
     val url: List<Url>
 )
+{
+    @JsonClass(generateAdapter = true)
+    @Parcelize
+    data class Url(
+        val url: String?,
+        @Json(name = "anime_name") val animeName: String?
+    ) : Parcelable
 
-@JsonClass(generateAdapter = true)
-@Parcelize
-data class Url (
-val url: String?,
-@Json(name = "anime_name") val animeName: String?
-) : Parcelable
+}
+
