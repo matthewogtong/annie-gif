@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import com.example.anniegif.databinding.ActivityMainBinding
 import com.example.anniegif.viewmodel.AnnieViewModel
 
-class MainActivity : AppCompatActivity() {
+class FullScreenGifActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<AnnieViewModel>()
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
