@@ -20,13 +20,18 @@ class GifListActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.d("gif_url", "on create")
 
-        viewModel.getGifs()
-        binding.rvGifs.adapter = GifListAdapter()
+        initViews()
 
         viewModel.gifs.observe(this) {
             // receive gifs result here
             Log.d("gif_url", it.toString())
-            (binding.rvGifs.adapter as GifListAdapter).updateGifs(it)
+            with(binding) {
+                (rvGifs.adapter as GifListAdapter).updateGifs(it)
+            }
         }
+    }
+    private fun initViews() = with(binding) {
+        viewModel.getGifs()
+        rvGifs.adapter = GifListAdapter()
     }
 }
