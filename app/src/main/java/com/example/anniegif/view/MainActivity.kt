@@ -1,4 +1,4 @@
-package com.example.anniegif
+package com.example.anniegif.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
